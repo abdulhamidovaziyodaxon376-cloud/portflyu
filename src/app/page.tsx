@@ -13,6 +13,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Braces,
+  Camera,
   Check,
   Code2,
   Database,
@@ -21,6 +22,7 @@ import {
   Mail,
   Menu,
   Palette,
+  Phone,
   Send,
   Sparkles,
   Terminal,
@@ -36,46 +38,30 @@ import {
 
 const projects = [
   {
-    title: "Forma",
+    title: "Job Search & Hiring Platform",
     category: "Next.js",
     description:
-      "A calmer way to plan your week. A thoughtful dashboard for turning big goals into small, doable steps.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+      "A modern platform connecting job seekers with employers. Features include job searching, application tracking, and posting job vacancies.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
     number: "01",
     gradient: "from-violet-500/25 via-fuchsia-500/10 to-transparent",
     accent: "text-violet-300",
-    preview: "forma.studio",
-    liveUrl: "https://vercel.com/templates/next.js",
-    repoUrl: "https://github.com/vercel/next.js",
+    liveUrl: "https://ish-beryl.vercel.app/",
+    repoUrl: "https://github.com/abdulhamidovaziyodaxon376-cloud",
     visual: "planner",
   },
   {
-    title: "Goodspace",
+    title: "Hotel Booking Platform (Travel)",
     category: "React",
     description:
-      "A friendly little home for independent makers to share what they’re building and find their people.",
-    tags: ["React", "Supabase", "Framer Motion"],
+      "An online booking system tailored for travelers. Features quick property search, detailed hotel views, and seamless reservation management.",
+    tags: ["React", "Next.js", "Tailwind CSS"],
     number: "02",
     gradient: "from-emerald-400/20 via-teal-400/10 to-transparent",
     accent: "text-emerald-300",
-    preview: "goodspace.community",
-    liveUrl: "https://react.dev",
-    repoUrl: "https://github.com/facebook/react",
+    liveUrl: "https://github.com/abdulhamidovaziyodaxon376-cloud/travel",
+    repoUrl: "https://github.com/abdulhamidovaziyodaxon376-cloud/travel",
     visual: "community",
-  },
-  {
-    title: "Mono Studio",
-    category: "Next.js",
-    description:
-      "A crisp, editorial portfolio template for creative studios with a soft spot for the details.",
-    tags: ["Next.js", "Motion", "CSS"],
-    number: "03",
-    gradient: "from-amber-300/20 via-orange-300/10 to-transparent",
-    accent: "text-amber-200",
-    preview: "mono.design",
-    liveUrl: "https://nextjs.org",
-    repoUrl: "https://github.com/vercel/next.js",
-    visual: "studio",
   },
 ];
 
@@ -295,7 +281,7 @@ export default function Home() {
     const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
     const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
 
-    window.location.href = `mailto:hello@abdulhamidova.dev?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:abdulhamidovaziyodaxon376@gmail.com?subject=${subject}&body=${body}`;
     setFormSubmitted(true);
     confetti({
       particleCount: 90,
@@ -505,7 +491,7 @@ export default function Home() {
               <div className="mt-10 flex items-center gap-3">
                 <span className="mr-1 text-[11px] text-white/35">Find me</span>
                 <a
-                  href="https://github.com/your-username"
+                  href="https://github.com/abdulhamidovaziyodaxon376-cloud"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile (opens in a new tab)"
@@ -514,7 +500,7 @@ export default function Home() {
                   <Code2 size={15} />
                 </a>
                 <a
-                  href="https://instagram.com/your-username"
+                  href="https://instagram.com/abdlhmdva.l7"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram profile (opens in a new tab)"
@@ -523,7 +509,7 @@ export default function Home() {
                   ◎
                 </a>
                 <a
-                  href="https://t.me/your-username"
+                  href="https://t.me/abdulhamidova"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Telegram profile (opens in a new tab)"
@@ -756,17 +742,19 @@ export default function Home() {
                     <span
                       className={`font-mono text-[10px] uppercase tracking-[0.15em] ${project.accent}`}
                     >
-                      {project.category} — 2025
+                      {project.category}
                     </span>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Open ${project.title} live preview in a new tab`}
-                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/50 transition hover:border-white/25 hover:text-white"
-                    >
-                      <ArrowUpRight size={14} />
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} live preview in a new tab`}
+                        className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/50 transition hover:border-white/25 hover:text-white"
+                      >
+                        <ArrowUpRight size={14} />
+                      </a>
+                    )}
                   </div>
                   <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-white">
                     {project.title}
@@ -784,23 +772,22 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6 flex items-center justify-between border-t border-white/[0.07] pt-4">
+                  <div className="mt-6 flex items-center gap-2 border-t border-white/[0.07] pt-4">
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[11px] font-medium text-white/65 transition hover:text-white"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-violet-300/20 bg-violet-300/[0.08] px-3 py-2 text-[11px] font-medium text-violet-100 transition hover:border-violet-200/40 hover:bg-violet-300/[0.14]"
                     >
-                      {project.preview} <ArrowUpRight size={12} />
+                      Live Demo <ArrowUpRight size={12} />
                     </a>
                     <a
                       href={project.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`View ${project.title} source repository in a new tab`}
-                      className="inline-flex items-center gap-1.5 text-[11px] text-white/40 transition hover:text-white/80"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.1] bg-white/[0.03] px-3 py-2 text-[11px] font-medium text-white/65 transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
                     >
-                      <Code2 size={13} /> Source
+                      <Code2 size={13} /> GitHub Code
                     </a>
                   </div>
                 </div>
@@ -811,12 +798,12 @@ export default function Home() {
 
         <Reveal className="mt-8 text-center">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/abdulhamidovaziyodaxon376-cloud"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs text-white/45 transition hover:text-white/80"
           >
-            More on GitHub <ArrowRight size={13} />
+            View on GitHub <ArrowRight size={13} />
           </a>
         </Reveal>
       </section>
@@ -870,121 +857,276 @@ export default function Home() {
 
       <section
         id="contact"
-        className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-28"
+        className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28"
       >
-        <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[350px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/[0.08] blur-[120px]" />
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <Reveal>
-            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.22em] text-violet-300/80">
-              Have a good one in mind?
-            </p>
-            <h2 className="max-w-md text-4xl font-semibold leading-[1.08] tracking-[-0.06em] text-white sm:text-5xl">
-              Let&apos;s make
-              <br />
-              <span className="bg-gradient-to-r from-violet-200 to-sky-200 bg-clip-text text-transparent">
-                something matter.
-              </span>
-            </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/45">
-              Have a project, a question, or just want to say hello? My inbox is
-              always open.
-            </p>
-            <a
-              href="mailto:hello@abdulhamidova.dev"
-              className="mt-7 inline-flex items-center gap-2 text-sm text-white/75 transition hover:text-white"
-            >
-              <Mail size={15} className="text-violet-300" />
-              hello@abdulhamidova.dev
-              <ArrowUpRight size={13} className="text-white/40" />
-            </a>
-          </Reveal>
-
-          <Reveal delay={0.12}>
-            <form
-              onSubmit={handleContactSubmit}
-              className="rounded-2xl border border-white/[0.09] bg-white/[0.025] p-5 backdrop-blur-xl sm:p-7"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block">
-                  <span className="mb-2 block text-[11px] text-white/55">
-                    Your name
-                  </span>
-                  <input
-                    required
-                    name="name"
-                    autoComplete="name"
-                    placeholder="Jane Smith"
-                    className="w-full rounded-lg border border-white/[0.09] bg-[#0b0a10] px-3.5 py-3 text-[13px] text-white outline-none transition placeholder:text-white/25 focus:border-violet-300/45 focus:ring-2 focus:ring-violet-300/10"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block text-[11px] text-white/55">
-                    Email address
-                  </span>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    autoComplete="email"
-                    placeholder="jane@example.com"
-                    className="w-full rounded-lg border border-white/[0.09] bg-[#0b0a10] px-3.5 py-3 text-[13px] text-white outline-none transition placeholder:text-white/25 focus:border-violet-300/45 focus:ring-2 focus:ring-violet-300/10"
-                  />
-                </label>
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[min(90vw,760px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/[0.1] blur-[130px]" />
+        <div className="relative overflow-hidden rounded-[30px] border border-white/[0.09] bg-gradient-to-br from-[#171522]/95 via-[#100f18]/95 to-[#11101a]/95 p-5 shadow-2xl shadow-black/30 backdrop-blur-2xl sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute -right-28 -top-32 h-80 w-80 rounded-full bg-indigo-500/[0.12] blur-[90px]" />
+          <div className="pointer-events-none absolute -bottom-40 left-1/4 h-72 w-72 rounded-full bg-violet-500/[0.09] blur-[90px]" />
+          <div className="relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+            <Reveal>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-violet-300/15 bg-violet-300/[0.07] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-violet-200/90">
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(196,181,253,0.8)]" />
+                Let&apos;s connect
               </div>
-              <label className="mt-5 block">
-                <span className="mb-2 block text-[11px] text-white/55">
-                  A little about your project
+              <h2 className="max-w-md text-4xl font-semibold leading-[1.06] tracking-[-0.055em] text-white sm:text-5xl">
+                Let&apos;s make
+                <br />
+                <span className="bg-gradient-to-r from-violet-200 via-indigo-200 to-sky-200 bg-clip-text text-transparent">
+                  something matter.
                 </span>
-                <textarea
-                  required
-                  name="message"
-                  rows={4}
-                  placeholder="Tell me what you're thinking..."
-                  className="w-full resize-y rounded-lg border border-white/[0.09] bg-[#0b0a10] px-3.5 py-3 text-[13px] leading-6 text-white outline-none transition placeholder:text-white/25 focus:border-violet-300/45 focus:ring-2 focus:ring-violet-300/10"
-                />
-              </label>
-              <div className="mt-5 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                <p
-                  aria-live="polite"
-                  className="min-h-4 text-[10px] text-emerald-200/80"
+              </h2>
+              <p className="mt-5 max-w-sm text-[13px] leading-7 text-white/50">
+                Have a project, a question, or just want to say hello? Choose
+                whatever way works best for you.
+              </p>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <a
+                  href="mailto:abdulhamidovaziyodaxon376@gmail.com"
+                  className="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-3.5 transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/25 hover:bg-violet-300/[0.06] hover:shadow-lg hover:shadow-violet-950/20"
                 >
-                  {formSubmitted
-                    ? "Your email app should open with your message ready to send."
-                    : "This opens your email app — no backend required."}
-                </p>
-                <button
-                  type="submit"
-                  className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-[12px] font-semibold text-[#101015] transition hover:bg-violet-100"
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-violet-300/15 bg-gradient-to-br from-violet-400/20 to-indigo-400/[0.08] text-violet-200">
+                    <Mail size={17} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-white/40">
+                      Email
+                    </span>
+                    <span className="mt-1 block break-all text-[11px] font-medium text-white/80 transition group-hover:text-white sm:text-xs">
+                      abdulhamidovaziyodaxon376@gmail.com
+                    </span>
+                  </span>
+                </a>
+                <a
+                  href="tel:+998908565689"
+                  className="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-3.5 transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/25 hover:bg-violet-300/[0.06] hover:shadow-lg hover:shadow-violet-950/20"
                 >
-                  Send a message
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-indigo-300/15 bg-gradient-to-br from-indigo-400/20 to-violet-400/[0.08] text-indigo-200">
+                    <Phone size={17} />
+                  </span>
+                  <span>
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-white/40">
+                      Phone
+                    </span>
+                    <span className="mt-1 block text-xs font-medium text-white/80 transition group-hover:text-white">
+                      +998 90 856 56 89
+                    </span>
+                  </span>
+                </a>
+                <a
+                  href="https://t.me/abdulhamidova"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram (opens in a new tab)"
+                  className="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-3.5 transition duration-300 hover:-translate-y-0.5 hover:border-sky-300/25 hover:bg-sky-300/[0.05] hover:shadow-lg hover:shadow-sky-950/20"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-sky-300/15 bg-gradient-to-br from-sky-400/20 to-indigo-400/[0.08] text-sky-200">
+                    <Send size={16} />
+                  </span>
+                  <span>
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-white/40">
+                      Telegram
+                    </span>
+                    <span className="mt-1 block text-xs font-medium text-white/80 transition group-hover:text-white">
+                      @abdulhamidova
+                    </span>
+                  </span>
                   <ArrowUpRight
                     size={14}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="ml-auto shrink-0 text-white/25 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/70"
                   />
-                </button>
+                </a>
+                <a
+                  href="https://instagram.com/abdlhmdva.l7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram (opens in a new tab)"
+                  className="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-3.5 transition duration-300 hover:-translate-y-0.5 hover:border-fuchsia-300/25 hover:bg-fuchsia-300/[0.05] hover:shadow-lg hover:shadow-fuchsia-950/20"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-fuchsia-300/15 bg-gradient-to-br from-fuchsia-400/20 to-violet-400/[0.08] text-fuchsia-200">
+                    <Camera size={17} />
+                  </span>
+                  <span>
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-white/40">
+                      Instagram
+                    </span>
+                    <span className="mt-1 block text-xs font-medium text-white/80 transition group-hover:text-white">
+                      @abdlhmdva.l7
+                    </span>
+                  </span>
+                  <ArrowUpRight
+                    size={14}
+                    className="ml-auto shrink-0 text-white/25 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/70"
+                  />
+                </a>
+                <a
+                  href="https://github.com/abdulhamidovaziyodaxon376-cloud"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile (opens in a new tab)"
+                  className="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-3.5 transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/25 hover:bg-violet-300/[0.06] hover:shadow-lg hover:shadow-violet-950/20"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-violet-300/15 bg-gradient-to-br from-violet-400/20 to-indigo-400/[0.08] text-violet-200">
+                    <Code2 size={17} />
+                  </span>
+                  <span>
+                    <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-white/40">
+                      GitHub
+                    </span>
+                    <span className="mt-1 block text-xs font-medium text-white/80 transition group-hover:text-white">
+                      View my profile
+                    </span>
+                  </span>
+                  <ArrowUpRight
+                    size={14}
+                    className="ml-auto shrink-0 text-white/25 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/70"
+                  />
+                </a>
               </div>
-            </form>
-          </Reveal>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <form
+                onSubmit={handleContactSubmit}
+                className="rounded-[24px] border border-white/[0.09] bg-[#0b0a12]/65 p-5 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-7"
+              >
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold tracking-[-0.03em] text-white">
+                    Send a message
+                  </h3>
+                  <p className="mt-1 text-xs leading-5 text-white/40">
+                    I&apos;d love to hear what you&apos;re working on.
+                  </p>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <label className="block">
+                    <span className="mb-2 block text-[11px] font-medium text-white/60">
+                      Your name
+                    </span>
+                    <input
+                      required
+                      name="name"
+                      autoComplete="name"
+                      placeholder="Jane Smith"
+                      className="w-full rounded-xl border border-white/[0.09] bg-white/[0.03] px-4 py-3 text-[13px] text-white outline-none transition duration-200 placeholder:text-white/25 hover:border-white/[0.15] focus:border-violet-300/50 focus:bg-violet-300/[0.04] focus:ring-4 focus:ring-violet-400/10"
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="mb-2 block text-[11px] font-medium text-white/60">
+                      Email address
+                    </span>
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      autoComplete="email"
+                      placeholder="jane@example.com"
+                      className="w-full rounded-xl border border-white/[0.09] bg-white/[0.03] px-4 py-3 text-[13px] text-white outline-none transition duration-200 placeholder:text-white/25 hover:border-white/[0.15] focus:border-violet-300/50 focus:bg-violet-300/[0.04] focus:ring-4 focus:ring-violet-400/10"
+                    />
+                  </label>
+                </div>
+                <label className="mt-4 block">
+                  <span className="mb-2 block text-[11px] font-medium text-white/60">
+                    A little about your project
+                  </span>
+                  <textarea
+                    required
+                    name="message"
+                    rows={4}
+                    placeholder="Tell me what you're thinking..."
+                    className="w-full resize-y rounded-xl border border-white/[0.09] bg-white/[0.03] px-4 py-3 text-[13px] leading-6 text-white outline-none transition duration-200 placeholder:text-white/25 hover:border-white/[0.15] focus:border-violet-300/50 focus:bg-violet-300/[0.04] focus:ring-4 focus:ring-violet-400/10"
+                  />
+                </label>
+                <div className="mt-5 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                  <p
+                    aria-live="polite"
+                    className="min-h-4 text-[10px] leading-4 text-white/40"
+                  >
+                    {formSubmitted
+                      ? "Your email app should open with your message ready to send."
+                      : "Your message opens in your email app — no backend required."}
+                  </p>
+                  <button
+                    type="submit"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 via-violet-500 to-indigo-500 px-5 py-3.5 text-[12px] font-semibold text-white shadow-lg shadow-violet-950/40 transition duration-300 hover:-translate-y-0.5 hover:from-violet-400 hover:to-indigo-400 hover:shadow-xl hover:shadow-violet-900/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-300/30 sm:w-auto"
+                  >
+                    Send Message
+                    <ArrowUpRight
+                      size={14}
+                      className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </button>
+                </div>
+              </form>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      <footer className="border-t border-white/[0.06]">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-6 sm:flex-row sm:px-8">
-          <a href="#home" className="text-xs font-medium text-white/55">
-            Abdulhamidova{" "}
-            <span className="text-white/30">Ziyodaxon</span>
-            <span className="text-violet-300">.</span>
-          </a>
-          <p className="text-[10px] text-white/30">
-            Designed & built with care · © 2026 Abdulhamidova Ziyodaxon
-          </p>
-          <a
-            href="#home"
-            aria-label="Back to top"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.08] text-white/40 transition hover:border-white/20 hover:text-white"
-          >
-            <ArrowUpRight size={13} className="-rotate-45" />
-          </a>
+      <footer className="border-t border-white/[0.06] bg-[#09080d]/55">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="flex flex-col items-center justify-between gap-5 py-7 sm:flex-row">
+            <a href="#home" className="text-sm font-semibold tracking-[-0.03em] text-white/80 transition hover:text-white">
+              Abdulhamidova{" "}
+              <span className="text-white/45">Ziyodaxon</span>
+              <span className="text-violet-300">.</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://t.me/abdulhamidova"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram (opens in a new tab)"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-white/50 transition hover:border-sky-300/25 hover:bg-sky-300/[0.08] hover:text-sky-200"
+              >
+                <Send size={15} />
+              </a>
+              <a
+                href="https://instagram.com/abdlhmdva.l7"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram (opens in a new tab)"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-white/50 transition hover:border-fuchsia-300/25 hover:bg-fuchsia-300/[0.08] hover:text-fuchsia-200"
+              >
+                <Camera size={15} />
+              </a>
+              <a
+                href="mailto:abdulhamidovaziyodaxon376@gmail.com"
+                aria-label="Email Abdulhamidova Ziyodaxon"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-white/50 transition hover:border-violet-300/25 hover:bg-violet-300/[0.08] hover:text-violet-200"
+              >
+                <Mail size={15} />
+              </a>
+              <a
+                href="tel:+998908565689"
+                aria-label="Call +998 90 856 56 89"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-white/50 transition hover:border-violet-300/25 hover:bg-violet-300/[0.08] hover:text-violet-200"
+              >
+                <Phone size={15} />
+              </a>
+              <a
+                href="https://github.com/abdulhamidovaziyodaxon376-cloud"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile (opens in a new tab)"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-white/50 transition hover:border-violet-300/25 hover:bg-violet-300/[0.08] hover:text-violet-200"
+              >
+                <Code2 size={15} />
+              </a>
+            </div>
+            <a
+              href="#home"
+              aria-label="Back to top"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.025] text-white/45 transition hover:border-white/20 hover:text-white"
+            >
+              <ArrowUpRight size={14} className="-rotate-45" />
+            </a>
+          </div>
+          <div className="flex flex-col items-center justify-between gap-2 border-t border-white/[0.06] py-4 text-[10px] text-white/30 sm:flex-row">
+            <p>© 2026 Abdulhamidova Ziyodaxon. All rights reserved.</p>
+            <p>Designed &amp; built with care.</p>
+          </div>
         </div>
       </footer>
     </main>
